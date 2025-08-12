@@ -13,6 +13,7 @@
 ```
 
 > This application is currently in *DEMO* mode. It requires a password for use.
+> [https://eightarms-web.vercel.app/](https://eightarms-web.vercel.app/)
 
 A web-based interface for the powerful [**EightArms**](https://github.com/notalex-sh/eightarms) OSINT tool, which extracts publicly available email addresses from GitHub repositories through commit history analysis.
 
