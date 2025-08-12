@@ -26,7 +26,7 @@ The core methodology is based on the principles outlined in the my blog post:
 - **[GitHub OSINT: The Malicious Potential of Leaked Commit Data](https://www.notalex.sh/blog/githubosint)**
 
 This is a web rendition of the original EightArms CLI tool:
-- **[EightArms CLI]([**EightArms**](https://github.com/notalex-sh/eightarms))**
+- **[EightArms CLI](https://github.com/notalex-sh/eightarms)**
 
 ## Key Capabilities
 
