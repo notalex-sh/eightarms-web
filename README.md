@@ -23,7 +23,7 @@ This web application enables security researchers and investigators to gather in
 EightArms performs automated reconnaissance on GitHub user accounts by analyzing publicly accessible commit metadata across their repository ecosystem. The tool extracts email addresses from commit headers, signatures, and collaboration records without requiring authentication or leaving direct forensic traces.
 
 The core methodology is based on the principles outlined in the my blog post:
-- **[GitHub OSINT: The Malicious Potential of Leaked Commit Data](https://www.notalex.sh/blog/githubosint)**
+- **[My GitHub OSINT Blog](https://www.notalex.sh/blog/githubosint)**
 
 This is a web rendition of the original EightArms CLI tool:
 - **[EightArms CLI](https://github.com/notalex-sh/eightarms)**
