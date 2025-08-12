@@ -1,7 +1,6 @@
 <script>
     import { fly, fade } from 'svelte/transition';
-    export let results;
-    export let isLoading;
+    let { results, isLoading } = $props();
 </script>
 
 {#if isLoading && results.length === 0}

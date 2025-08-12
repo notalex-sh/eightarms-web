@@ -1,4 +1,6 @@
 <script>
+  import { preventDefault } from 'svelte/legacy';
+
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
     import ResultsDisplay from '$lib/components/ResultsDisplay.svelte';
@@ -6,19 +8,19 @@
     import DocsPanel from '$lib/components/DocsPanel.svelte';
     import Spinner from '$lib/components/Spinner.svelte';
 
-    let username = '';
-    let results = [];
-    let isLoading = false;
-    let error = '';
+    let username = $state('');
+    let results = $state([]);
+    let isLoading = $state(false);
+    let error = $state('');
 
-    let speed = 'medium';
-    let maxRepos = 10;
-    let pagesPerRepo = 3;
-    let commitStrategy = '[10,10]';
+    let speed = $state('medium');
+    let maxRepos = $state(10);
+    let pagesPerRepo = $state(3);
+    let commitStrategy = $state('[10,10]');
 		
-	let isAuthenticated = false;
-    let passwordInput = '';
-    let authError = '';
+	let isAuthenticated = $state(false);
+    let passwordInput = $state('');
+    let authError = $state('');
 
     onMount(() => {
         if (sessionStorage.getItem('isAuthenticated')) {
@@ -80,7 +82,7 @@
 			<div class="hacker-card p-8 text-center max-w-sm w-full">
 				<h1 class="text-2xl font-bold text-white mb-4">> SECURE TERMINAL_</h1>
 				<p class="text-gray-500 mb-4 text-sm">Authorization Required</p>
-				<form on:submit|preventDefault={handlePassword}>
+				<form onsubmit={preventDefault(handlePassword)}>
 					<input
 						class="cyber-input text-center tracking-[0.5em]"
 						type="password"
@@ -127,7 +129,7 @@
 				class="w-full"
 				in:fly={{ y: -20, duration: 400, delay: 300 }}
 			>
-				<form on:submit|preventDefault={handleSubmit} class="relative mb-6">
+				<form onsubmit={preventDefault(handleSubmit)} class="relative mb-6">
 					<input
 						class="w-full bg-gray-900/80 border border-green-500/30 text-lg p-4 rounded-none focus:outline-none focus:ring-1 focus:ring-green-400 transition-all placeholder-gray-700"
 						type="text"

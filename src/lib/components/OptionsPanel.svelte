@@ -1,9 +1,13 @@
 <script>
-    export let speed;
-    export let maxRepos;
-    export let pagesPerRepo;
-    export let commitStrategy;
-    export let isLoading;
+    import { run } from 'svelte/legacy';
+
+    let {
+        speed = $bindable(),
+        maxRepos = $bindable(),
+        pagesPerRepo = $bindable(),
+        commitStrategy = $bindable(),
+        isLoading
+    } = $props();
 
     const presets = {
         fast: { maxRepos: 5, pagesPerRepo: 2, commitStrategy: '[5,5]' },
@@ -11,7 +15,9 @@
         slow: { maxRepos: 25, pagesPerRepo: 5, commitStrategy: 'all' }
     };
     function applyPreset(s) { if (s !== 'custom') { const p = presets[s]; maxRepos=p.maxRepos; pagesPerRepo=p.pagesPerRepo; commitStrategy=p.commitStrategy; } }
-    $: applyPreset(speed);
+    run(() => {
+        applyPreset(speed);
+    });
 </script>
 
 <div class="hacker-card space-y-6">

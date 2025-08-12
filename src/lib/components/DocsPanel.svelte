@@ -1,10 +1,10 @@
 <script>
     import { fly } from 'svelte/transition';
-    let showDocs = true;
+    let showDocs = $state(true);
 </script>
 
 <div class="hacker-card">
-    <button on:click={() => showDocs = !showDocs} class="w-full text-left">
+    <button onclick={() => showDocs = !showDocs} class="w-full text-left">
         <h2 class="text-xl font-bold text-white mb-2">> Operational Doctrine_ {showDocs ? '[-]' : '[+]'}</h2>
     </button>
     
