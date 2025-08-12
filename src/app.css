@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-black;
+    }
+}
+
+@layer components {
+    .hacker-card {
+        @apply bg-black/60 border border-green-500/30 p-6 backdrop-blur-sm;
+    }
+    .cyber-input {
+        @apply w-full bg-gray-900/70 border border-green-500/30 p-2 rounded-none focus:outline-none focus:ring-1 focus:ring-green-400 transition-all;
+    }
+    .text-glow {
+        text-shadow: 0 0 5px theme('colors.green.500');
+    }
+    .text-glow-blue {
+        text-shadow: 0 0 8px theme('colors.blue.500');
+    }
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: black; }
+::-webkit-scrollbar-thumb { background: theme('colors.green.900'); }
+::-webkit-scrollbar-thumb:hover { background: theme('colors.green.800'); }
